@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+@layer {
+.App {
+ @apply flex items-start text-MenuColor ; 
+}
+.SearchSection{
+ @apply h-[100vh] relative basis-[25%] bg-UserComponentBg  ; 
+}
+.Nav-Section {
+ @apply w-full h-[8%] relative shadow-MainShadowColor bg-NavSectionBg flex items-center justify-between p-[10px] ; 
+}
+.title{
+ @apply font-semibold  !important; 
+}
+.AddBtn{
+ @apply h-fit w-[10%] cursor-pointer bg-UserComponentBg p-1 rounded flex items-center justify-center ; 
+}
+.Line{
+ @apply h-4 w-[1px] bg-MenuColor ; 
+}
+.Child{
+ @apply rotate-90 -translate-x-[1px] !important; 
+}
+.MainSearch{
+ @apply w-full flex flex-col items-start gap-4 px-[15px] py-[30px] ; 
+}
+.SearchForm {
+ @apply flex items-center relative w-full ; 
+}
+.SearchIcon{
+ @apply absolute left-[6%] ; 
+}
+.SearchInput{
+ @apply text-MenuColor indent-10 font-medium placeholder:text-ParagraphText bg-HoverStateBg outline-none py-3 px-5 w-full rounded-md !important ; 
+}
+.MainChannel{
+ @apply p-[10px] !important ; 
+}
+.Channel{
+ @apply flex items-center gap-3 cursor-pointer; 
+}
+.ChannelName{
+ @apply font-semibold uppercase text-ChannelsNames hover:underline  hover:text-MenuColor !important ; 
+}
+.Shape{
+ @apply h-fit w-fit bg-MessagingBackground rounded-md px-2 py-1 ; 
+}
+.UserSection{
+ @apply fixed bottom-0 w-[25%] h-[10%] ; 
+}
+.UserInfo{
+ @apply flex items-center gap-2 ; 
+}
+.UserProfileImage{
+ @apply rounded-md ; 
+}
+.UserName{
+ @apply text-TitlesText font-medium !important; 
+}
+.UserDropDown{
+ @apply bg-transparent ; 
+}
+.rotation{
+ @apply -rotate-45 -translate-x-[1.8px] h-2 w-[2px] !important; 
+}
+.rotation2 {
+ @apply rotate-45 h-2 translate-x-[1.8px] w-[2px] !important ; 
+}
+
+
+.ChatChannel{
+ @apply h-[100vh] relative basis-[75%] bg-MessagingBackground ;
+}
+.ChannelSection{
+ @apply bg-MessagingBackground shadow-MainShadowColor relative border-b-[3px] border-BoxColor !important; 
+}
+.titleMoves{
+ @apply relative left-[3.5%] !important; 
+}
+.MainChatSection{
+ @apply px-[4.5%] py-[20px] w-full; 
+}
+.SendBtn{
+ @apply flex items-center justify-center h-fit w-fit bg-MainSendBtn rounded-md p-2 relative cursor-pointer -left-[5%] ; 
+}
+.EmojiBtn{
+ @apply flex items-center justify-center h-fit w-fit bg-MainSendBtn rounded-md p-2 relative cursor-pointer left-[5%] ;
+}
+.ChangeFormat{
+ @apply fixed bottom-[5%] w-[68%] ; 
+}
+}
