@@ -555,7 +555,7 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-body {
+body  , .ChatChannel{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -563,18 +563,34 @@ body {
 
 @layer {
   .App {
-    display: flex;
+    display: inline-block;
+    width: 100vw;
+    -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     align-items: flex-start;
     --tw-text-opacity: 1;
     color: rgb(242 242 242 / var(--tw-text-opacity));
   }
 
+  @media (min-width: 768px) {
+    .App {
+      display: flex;
+    }
+  }
+
   .SearchSection {
     position: relative;
+    z-index: 10;
     height: 100vh;
-    flex-basis: 25%;
+    width: 75%;
     --tw-bg-opacity: 1;
     background-color: rgb(51 51 51 / var(--tw-bg-opacity));
+  }
+
+  @media (min-width: 768px) {
+    .SearchSection {
+      width: 25%;
+    }
   }
 
   .Nav-Section {
@@ -595,12 +611,21 @@ body {
     font-weight: 600 !important;
   }
 
+  .BtnHolder {
+    display: flex;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
   .AddBtn {
     display: flex;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    width: 10%;
+    width: 40px;
     cursor: pointer;
     align-items: center;
     justify-content: center;
@@ -620,6 +645,46 @@ body {
   .Child {
     --tw-translate-x: -1px !important;
     --tw-rotate: 90deg !important;
+    -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+  }
+
+  .DeleteBtn {
+    position: absolute !important;
+    right: -15% !important;
+    -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+  }
+
+  .DeleteBtn:hover {
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(220 38 38 / var(--tw-bg-opacity)) !important;
+  }
+
+  @media (min-width: 640px) {
+    .DeleteBtn {
+      right: -12.5% !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .DeleteBtn {
+      display: none !important;
+    }
+  }
+
+  .LineDelete {
+    width: 1.15px !important;
+    --tw-translate-x: .5px !important;
+    --tw-rotate: 45deg !important;
+    -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+  }
+
+  .LineDelete2 {
+    width: 1.15px !important;
+    --tw-translate-x: -.5px !important;
+    --tw-rotate: -45deg !important;
     -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
             transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
   }
@@ -719,7 +784,7 @@ body {
     position: fixed;
     bottom: 0px;
     height: 10%;
-    width: 25%;
+    width: 100%;
   }
 
   .UserInfo {
@@ -761,21 +826,60 @@ body {
   }
 
   .ChatChannel {
-    position: relative;
-    height: 100vh;
-    flex-basis: 75%;
-    --tw-bg-opacity: 1;
-    background-color: rgb(37 35 41 / var(--tw-bg-opacity));
+    position: absolute !important;
+    top: 0px !important;
+    left: -0% !important;
+    height: 100vh !important;
+    width: 100% !important;
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(37 35 41 / var(--tw-bg-opacity)) !important;
+  }
+
+  @media (min-width: 768px) {
+    .ChatChannel {
+      position: relative !important;
+      width: 75% !important;
+    }
   }
 
   .ChannelSection {
     position: relative !important;
+    width: 100% !important;
+    justify-content: flex-start !important;
     border-bottom-width: 3px !important;
     border-color: rgba(0, 0, 0, 0.25) !important;
     --tw-bg-opacity: 1 !important;
     background-color: rgb(37 35 41 / var(--tw-bg-opacity)) !important;
     --tw-shadow-color: 0px 10px 10px rgba(0, 0, 0, 0.25) !important;
     --tw-shadow: var(--tw-shadow-colored) !important;
+  }
+
+  .toggle {
+    display: flex;
+    height: 90%;
+    width: 5%;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 0.25rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(51 51 51 / var(--tw-bg-opacity));
+  }
+
+  @media (min-width: 640px) {
+    .toggle {
+      display: none;
+    }
+  }
+
+  .ChildLine {
+    margin: 0px !important;
+    height: 1px !important;
+    width: 0.75rem !important;
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(242 242 242 / var(--tw-bg-opacity)) !important;
+    padding: 0px !important;
   }
 
   .titleMoves {
@@ -791,9 +895,13 @@ body {
     padding-bottom: 20px;
   }
 
+  .SendInput {
+    width: 100% !important;
+  }
+
   .SendBtn {
     position: relative;
-    left: -5%;
+    left: -8.5%;
     display: flex;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -808,11 +916,17 @@ body {
     --tw-bg-opacity: 1;
     background-color: rgb(47 128 237 / var(--tw-bg-opacity));
     padding: 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .SendBtn {
+      left: -4.5%;
+    }
   }
 
   .EmojiBtn {
     position: relative;
-    left: 5%;
+    left: 8.5%;
     display: flex;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -829,9 +943,22 @@ body {
     padding: 0.5rem;
   }
 
+  @media (min-width: 768px) {
+    .EmojiBtn {
+      left: 4.5%;
+    }
+  }
+
   .ChangeFormat {
-    position: fixed;
-    bottom: 5%;
-    width: 68%;
+    position: fixed !important;
+    bottom: 5% !important;
+    left: 0px !important;
+  }
+
+  @media (min-width: 768px) {
+    .ChangeFormat {
+      position: absolute !important;
+      top: 90% !important;
+    }
   }
 }

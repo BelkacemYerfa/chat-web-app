@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 
-body {
+body  , .ChatChannel{
  margin: 0;
  padding: 0;
  box-sizing: border-box;
@@ -11,10 +11,10 @@ body {
 
 @layer {
 .App {
- @apply flex items-start text-MenuColor ; 
+ @apply inline-block md:flex items-start text-MenuColor transform w-[100vw] ; 
 }
 .SearchSection{
- @apply h-[100vh] relative basis-[25%] bg-UserComponentBg  ; 
+ @apply h-[100vh] relative md:w-[25%] w-[75%] bg-UserComponentBg z-10 ; 
 }
 .Nav-Section {
  @apply w-full h-[8%] relative shadow-MainShadowColor bg-NavSectionBg flex items-center justify-between p-[10px] ; 
@@ -22,14 +22,26 @@ body {
 .title{
  @apply font-semibold  !important; 
 }
+.BtnHolder{
+ @apply flex items-center gap-3 w-fit ; 
+}
 .AddBtn{
- @apply h-fit w-[10%] cursor-pointer bg-UserComponentBg p-1 rounded flex items-center justify-center ; 
+ @apply h-fit w-[40px] cursor-pointer bg-UserComponentBg p-1 rounded flex items-center justify-center ; 
 }
 .Line{
  @apply h-4 w-[1px] bg-MenuColor ; 
 }
 .Child{
  @apply rotate-90 -translate-x-[1px] !important; 
+}
+.DeleteBtn{
+ @apply absolute -right-[15%] sm:-right-[12.5%] md:hidden hover:bg-red-600 transform !important; 
+}
+.LineDelete{
+ @apply rotate-45 translate-x-[.5px]  w-[1.15px]  !important; 
+}
+.LineDelete2{
+ @apply -rotate-45 -translate-x-[.5px]  w-[1.15px] !important ; 
 }
 .MainSearch{
  @apply w-full flex flex-col items-start gap-4 px-[15px] py-[30px] ; 
@@ -56,7 +68,7 @@ body {
  @apply h-fit w-fit bg-MessagingBackground rounded-md px-2 py-1 ; 
 }
 .UserSection{
- @apply fixed bottom-0 w-[25%] h-[10%] ; 
+ @apply fixed bottom-0 w-full h-[10%] ; 
 }
 .UserInfo{
  @apply flex items-center gap-2 ; 
@@ -79,10 +91,16 @@ body {
 
 
 .ChatChannel{
- @apply h-[100vh] relative basis-[75%] bg-MessagingBackground ;
+ @apply h-[100vh] absolute md:relative top-0 -left-[0%] w-full  md:w-[75%]  bg-MessagingBackground !important;
 }
 .ChannelSection{
- @apply bg-MessagingBackground shadow-MainShadowColor relative border-b-[3px] border-BoxColor !important; 
+ @apply bg-MessagingBackground shadow-MainShadowColor relative border-b-[3px] border-BoxColor w-full justify-start !important; 
+}
+.toggle{
+ @apply flex sm:hidden h-[90%] items-center justify-evenly flex-col w-[5%] cursor-pointer bg-UserComponentBg rounded ; 
+}
+.ChildLine{
+ @apply h-[1px] w-3 bg-MenuColor m-0 p-0 !important; 
 }
 .titleMoves{
  @apply relative left-[3.5%] !important; 
@@ -90,13 +108,16 @@ body {
 .MainChatSection{
  @apply px-[4.5%] py-[20px] w-full; 
 }
+.SendInput{
+ @apply w-full !important ; 
+}
 .SendBtn{
- @apply flex items-center justify-center h-fit w-fit bg-MainSendBtn rounded-md p-2 relative cursor-pointer -left-[5%] ; 
+ @apply flex items-center justify-center h-fit w-fit bg-MainSendBtn rounded-md p-2 relative cursor-pointer -left-[8.5%] md:-left-[4.5%] ; 
 }
 .EmojiBtn{
- @apply flex items-center justify-center h-fit w-fit bg-MainSendBtn rounded-md p-2 relative cursor-pointer left-[5%] ;
+ @apply flex items-center justify-center h-fit w-fit bg-MainSendBtn rounded-md p-2 relative cursor-pointer left-[8.5%] md:left-[4.5%] ;
 }
 .ChangeFormat{
- @apply fixed bottom-[5%] w-[68%] ; 
+ @apply fixed md:absolute md:top-[90%] bottom-[5%] left-0 !important ; 
 }
 }

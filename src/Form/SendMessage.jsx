@@ -18,17 +18,17 @@ export const SendMessage = ()=>{
    <motion.div
     whileTap={{scale : 0.9}}
     className='EmojiBtn'>
-    <span class="material-symbols-outlined"
+    <span className="material-symbols-outlined"
     >
      mood
     </span>
    </motion.div>
-   <input type="text" className='SearchInput' placeholder="Type a message here " {...register('Message')} />
+   <input type="text" className='SearchInput SendInput' placeholder="Type a message here " {...register('Message')} />
    <motion.div 
     whileTap={{scale : 0.9}}
    className='SendBtn'>
     <span   
-    class="material-symbols-outlined">
+    className="material-symbols-outlined">
      send
     </span>
    </motion.div>

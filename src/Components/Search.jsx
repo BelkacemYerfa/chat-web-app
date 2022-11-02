@@ -1,17 +1,37 @@
 import { SearchForm } from '../Form/SearchForm';
-import testImage from '../Images/photo-1511367461989-f85a21fda167.jpg'
-export const Search = ()=>{
+import testImage from '../Images/photo-1511367461989-f85a21fda167.jpg' ;
+import { useState , useEffect } from 'react';
 
+export const Search = ({childToParent , toggle})=>{
+  const [newToggle , setNewToggle] = useState(false) ; 
+ const HandleToggle = ()=>{
+  setNewToggle(!newToggle)
+ }
+ useEffect(() => {
+   childToParent(newToggle)
+ }, [newToggle])
+ 
  return(
-  <div className="SearchSection">
+  <div className="SearchSection" style={{
+    translate : toggle ? '0%' : '-120%' , 
+    transition : 'all .35s ease-in-out'
+  }} >
      <div className="Nav-Section">
-       <h2 className="title">
-        Search 
-       </h2>
-       <div className="AddBtn">
+       <div className='titleHolder'>
+        <h2 className="title">
+         Search 
+        </h2>
+       </div>
+     <div className='BtnHolder'>
+     <div className="AddBtn">
          <div className="Line"></div>
          <div className="Line Child"></div>
        </div>
+       <div className='AddBtn DeleteBtn' onClick={HandleToggle}>
+         <div className="Line LineDelete"></div>
+         <div className="Line LineDelete2"></div>
+       </div>
+     </div>
      </div>
      <div className='SearchForm'>
        <SearchForm />

@@ -19,7 +19,7 @@ export const SearchForm = ()=>{
  return(
   <div className='MainSearch'>
    <form onSubmit={handleSubmit(onSearch)} className='SearchForm' >
-     <span class="material-symbols-outlined SearchIcon">
+     <span className="material-symbols-outlined SearchIcon">
        search
      </span>
      <input className='SearchInput' type="text" placeholder='Search ...' {...register('Search')} />
