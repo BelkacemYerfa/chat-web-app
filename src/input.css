@@ -9,6 +9,17 @@ body  , .ChatChannel{
  box-sizing: border-box;
 }
 
+::-webkit-scrollbar{
+ width: 5px;
+}
+::-webkit-scrollbar-thumb{
+ background-color: #333333;
+ border-radius: 5px;
+}
+::-webkit-scrollbar-track{
+ background-color: #120F13 ; 
+}
+
 @layer {
 .App {
  @apply inline-block md:flex items-start text-MenuColor transform w-[100vw] ; 
@@ -116,6 +127,24 @@ body  , .ChatChannel{
 }
 .EmojiBtn{
  @apply flex items-center justify-center h-fit w-fit bg-MainSendBtn rounded-md p-2 relative cursor-pointer left-[8.5%] md:left-[4.5%] ;
+}
+.DropEmoji{
+ @apply flex items-center overflow-y-scroll py-[1%] px-[1.5%] flex-wrap  gap-2 h-[25vh] w-[69vw] sm:h-[40vh] left-[8.5%] sm:left-[7.35%] md:left-[28%] fixed bottom-[13.5%] md:bottom-[12.5%]  bg-UserComponentBg rounded-md ; 
+}
+.SelectorHolder{
+ @apply flex w-full items-center gap-3 px-[1%] py-2 hover:bg-gray-500 rounded-md cursor-pointer ; 
+}
+.Selector{
+ @apply cursor-pointer h-10 w-10 flex items-center justify-center  ; 
+}
+.ElementSlug{
+ @apply text-TitlesText font-semibold ; 
+}
+.DropUploading{
+ @apply flex items-center py-[1%] px-[1.5%] flex-wrap  gap-2 h-[25vh] w-[69vw] md:w-[25vw] sm:h-[20vh] left-[8.5%] sm:left-[7.35%] md:left-[28%] fixed bottom-[13.5%] md:bottom-[12.5%]  bg-UserComponentBg rounded-md 
+}
+.FileHolder{
+ @apply flex items-center justify-center h-fit w-fit py-[1%] px-[1.5%] rounded-md hover:bg-gray-500 ; 
 }
 .ChangeFormat{
  @apply fixed md:absolute md:top-[90%] bottom-[5%] left-0 !important ; 
