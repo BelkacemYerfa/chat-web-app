@@ -17,7 +17,7 @@ export const SendMessage = ()=> {
  const onHandleMessage = (data)=>{
   console.log(data) ; 
   axios
-  .get(`https://emoji-api.com/emojis?search=${data.Message.slice(1,data.Message.lenght)}&access_key=82921aad6e50111e88b6a6dd9e985cbcc3a298eb`)
+  .get(`https://emoji-api.com/emojis?search=${data.Message.slice(1,data.Message.lenght)}&access_key=${process.env.REACT_APP_WEATHER_API_KEY}`)
   .then((res)=> {
     setEmoJiList(res.data) ;
     if(res && data.Message[0] === ':') {
