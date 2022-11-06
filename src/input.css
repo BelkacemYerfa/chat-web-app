@@ -141,10 +141,55 @@ body  , .ChatChannel{
  @apply text-TitlesText font-semibold ; 
 }
 .DropUploading{
- @apply flex items-center py-[1%] px-[1.5%] flex-wrap  gap-2 h-[25vh] w-[69vw] md:w-[25vw] sm:h-[20vh] left-[8.5%] sm:left-[7.35%] md:left-[28%] fixed bottom-[13.5%] md:bottom-[12.5%]  bg-UserComponentBg rounded-md 
+ @apply flex items-center z-20 py-[.5%] px-[.5%] flex-wrap gap-2 h-[25vh] w-[69vw] md:w-[15vw] sm:h-[8vh] left-[8.5%] sm:left-[7.35%] md:left-[28%] fixed bottom-[13.5%] md:bottom-[12.5%]  bg-UserComponentBg rounded-md 
 }
 .FileHolder{
- @apply flex items-center justify-center h-fit w-fit py-[1%] px-[1.5%] rounded-md hover:bg-gray-500 ; 
+ @apply flex flex-col items-center w-full h-fit hover:bg-MainSendBtn hover:text-MenuColor text-TitlesText rounded cursor-pointer  ; 
+}
+.InputStyle{
+ @apply flex items-center gap-1 justify-start p-[1%] h-[6vh] w-full ; 
+}
+#FileID{
+ @apply hidden ; 
+}
+.textImage{
+ @apply font-semibold capitalize !important; 
+}
+.ImageSettings{
+ @apply sticky h-[20%] w-full px-[1.5%] py-[3%] flex justify-end items-center gap-1 ; 
+}
+.DeleteImageBtn{
+ @apply h-fit w-fit p-[1%] rounded flex items-center justify-center gap-2 cursor-pointer bg-red-500 border-none !important; 
+}
+.TextInfo{
+ @apply text-MenuColor font-semibold !important ; 
+}
+.ImageContainer{
+ @apply h-[40vh] absolute bottom-[13%] sm:bottom-[14%] left-[7.5%] w-[85vw] md:bottom-[12.5%] md:left-[4%] md:w-[69vw] flex items-start flex-col gap-1 bg-UserComponentBg rounded-lg !important;  
+}
+.ImageCont{
+ @apply h-[90%] overflow-y-scroll w-full flex items-center flex-wrap gap-3 px-[1.5%]; 
+}
+.DeleteIndexImageBtn {
+ @apply z-50 absolute -right-[260%] hidden group-hover:flex items-center justify-center bg-red-500 h-10 w-fit px-[5px] rounded; 
+}
+.textSett {
+ @apply font-semibold !important; 
+}
+.IconHolder{
+ @apply h-10 w-10 flex justify-center items-center bg-MessagingBackground rounded  hover:bg-HoverStateBg; 
+}
+.NoNeed{
+ @apply h-[0px] w-full bg-transparent ; 
+}
+.HolderImage{
+ @apply relative h-[90%] w-[23%] p-[10px] flex items-center justify-center flex-col rounded-md bg-NavSectionBg ; 
+}
+.ImgSett{
+ @apply absolute -top-[2%] -right-[5%] cursor-pointer flex items-center justify-center gap-1; 
+}
+.UploadedImage{
+ @apply md:h-fit md:w-fit h-full w-full  rounded-md !important; 
 }
 .ChangeFormat{
  @apply fixed md:absolute md:top-[90%] bottom-[5%] left-0 !important ; 

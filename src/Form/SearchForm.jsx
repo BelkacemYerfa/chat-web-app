@@ -28,7 +28,7 @@ export const SearchForm = ()=>{
    {
       ChannelArray.map((elem)=>{
          return(
-            <div className='Channel'>
+            <div className='Channel' key={elem}>
              <div className='ShapeLogo'>
               {elem.Logo !== null ? (<img src={elem.Logo} alt='ChL' />) : (<div className='Shape'>
                <h3 className='Name' >
