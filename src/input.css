@@ -123,10 +123,10 @@ body  , .ChatChannel{
  @apply w-full !important ; 
 }
 .SendBtn{
- @apply flex items-center justify-center h-fit w-fit bg-MainSendBtn rounded-md p-2 relative cursor-pointer -left-[8.5%] md:-left-[4.5%] ; 
+ @apply flex items-center justify-center h-fit w-fit bg-MainSendBtn rounded-md p-2 relative cursor-pointer -left-[11%] sm:-left-[6.5%] md:-left-[4.5%] ; 
 }
 .EmojiBtn{
- @apply flex items-center justify-center h-fit w-fit bg-MainSendBtn rounded-md p-2 relative cursor-pointer left-[8.5%] md:left-[4.5%] ;
+ @apply flex items-center justify-center h-fit w-fit bg-MainSendBtn rounded-md p-2 relative cursor-pointer left-[11%] sm:left-[6.5%] md:left-[4.5%] ;
 }
 .DropEmoji{
  @apply flex items-center overflow-y-scroll py-[1%] px-[1.5%] flex-wrap  gap-2 h-[25vh] w-[69vw] sm:h-[40vh] left-[8.5%] sm:left-[7.35%] md:left-[28%] fixed bottom-[13.5%] md:bottom-[12.5%]  bg-UserComponentBg rounded-md ; 
@@ -141,7 +141,7 @@ body  , .ChatChannel{
  @apply text-TitlesText font-semibold ; 
 }
 .DropUploading{
- @apply flex items-center z-20 py-[.5%] px-[.5%] flex-wrap gap-2 h-[25vh] w-[69vw] md:w-[15vw] sm:h-[8vh] left-[8.5%] sm:left-[7.35%] md:left-[28%] fixed bottom-[13.5%] md:bottom-[12.5%]  bg-UserComponentBg rounded-md 
+ @apply flex items-center z-20 py-[.5%] px-[.5%] flex-wrap gap-2 h-[7vh] w-[46vw] sm:w-[30vw] md:w-[15vw] sm:h-[8vh] left-[8.5%] sm:left-[7.35%] md:left-[28%] fixed bottom-[13.5%] md:bottom-[12.5%]  bg-UserComponentBg rounded-md 
 }
 .FileHolder{
  @apply flex flex-col items-center w-full h-fit hover:bg-MainSendBtn hover:text-MenuColor text-TitlesText rounded cursor-pointer  ; 
@@ -165,19 +165,19 @@ body  , .ChatChannel{
  @apply text-MenuColor font-semibold !important ; 
 }
 .ImageContainer{
- @apply h-[40vh] absolute bottom-[13%] sm:bottom-[14%] left-[7.5%] w-[85vw] md:bottom-[12.5%] md:left-[4%] md:w-[69vw] flex items-start flex-col gap-1 bg-UserComponentBg rounded-lg !important;  
+ @apply h-[20vh] sm:h-[40vh] absolute bottom-[13%] sm:bottom-[14%] left-[7.5%] w-[85vw] md:bottom-[12.5%] md:left-[4%] md:w-[69vw] flex items-start flex-col gap-1 bg-UserComponentBg rounded-lg !important;  
 }
 .ImageCont{
- @apply h-[90%] overflow-y-scroll w-full flex items-center flex-wrap gap-3 px-[1.5%]; 
+ @apply h-[90%] overflow-y-scroll w-full flex items-start md:items-center flex-col md:flex-row flex-nowrap md:flex-wrap gap-3 px-[1.5%]; 
 }
 .DeleteIndexImageBtn {
- @apply z-50 absolute -right-[260%] hidden group-hover:flex items-center justify-center bg-red-500 h-10 w-fit px-[5px] rounded; 
+ @apply z-50 absolute -right-[260%] hidden group-hover:flex items-center justify-center bg-red-500 h-8 sm:h-10 w-fit px-[5px] rounded; 
 }
 .textSett {
  @apply font-semibold !important; 
 }
 .IconHolder{
- @apply h-10 w-10 flex justify-center items-center bg-MessagingBackground rounded  hover:bg-HoverStateBg; 
+ @apply h-8 w-8 sm:h-10 sm:w-10 flex justify-center items-center bg-MessagingBackground rounded  hover:bg-HoverStateBg; 
 }
 .NoNeed{
  @apply h-[0px] w-full bg-transparent ; 
@@ -189,7 +189,7 @@ body  , .ChatChannel{
  @apply absolute -top-[2%] -right-[5%] cursor-pointer flex items-center justify-center gap-1; 
 }
 .UploadedImage{
- @apply md:h-fit md:w-fit h-full w-full  rounded-md !important; 
+ @apply md:h-[85%] md:w-[80%] h-full w-full rounded-md !important; 
 }
 .ChangeFormat{
  @apply fixed md:absolute md:top-[90%] bottom-[5%] left-0 !important ; 

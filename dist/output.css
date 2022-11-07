@@ -914,7 +914,7 @@ body  , .ChatChannel{
 
   .SendBtn {
     position: relative;
-    left: -8.5%;
+    left: -11%;
     display: flex;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -929,6 +929,12 @@ body  , .ChatChannel{
     --tw-bg-opacity: 1;
     background-color: rgb(47 128 237 / var(--tw-bg-opacity));
     padding: 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .SendBtn {
+      left: -6.5%;
+    }
   }
 
   @media (min-width: 768px) {
@@ -939,7 +945,7 @@ body  , .ChatChannel{
 
   .EmojiBtn {
     position: relative;
-    left: 8.5%;
+    left: 11%;
     display: flex;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -954,6 +960,12 @@ body  , .ChatChannel{
     --tw-bg-opacity: 1;
     background-color: rgb(47 128 237 / var(--tw-bg-opacity));
     padding: 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .EmojiBtn {
+      left: 6.5%;
+    }
   }
 
   @media (min-width: 768px) {
@@ -1035,8 +1047,8 @@ body  , .ChatChannel{
     bottom: 13.5%;
     z-index: 20;
     display: flex;
-    height: 25vh;
-    width: 69vw;
+    height: 7vh;
+    width: 46vw;
     flex-wrap: wrap;
     align-items: center;
     gap: 0.5rem;
@@ -1053,6 +1065,7 @@ body  , .ChatChannel{
     .DropUploading {
       left: 7.35%;
       height: 8vh;
+      width: 30vw;
     }
   }
 
@@ -1149,7 +1162,7 @@ body  , .ChatChannel{
     bottom: 13% !important;
     left: 7.5% !important;
     display: flex !important;
-    height: 40vh !important;
+    height: 20vh !important;
     width: 85vw !important;
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -1162,6 +1175,7 @@ body  , .ChatChannel{
   @media (min-width: 640px) {
     .ImageContainer {
       bottom: 14% !important;
+      height: 40vh !important;
     }
   }
 
@@ -1177,12 +1191,21 @@ body  , .ChatChannel{
     display: flex;
     height: 90%;
     width: 100%;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
     gap: 0.75rem;
     overflow-y: scroll;
     padding-left: 1.5%;
     padding-right: 1.5%;
+  }
+
+  @media (min-width: 768px) {
+    .ImageCont {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+    }
   }
 
   .DeleteIndexImageBtn {
@@ -1190,7 +1213,7 @@ body  , .ChatChannel{
     right: -260%;
     z-index: 50;
     display: none;
-    height: 2.5rem;
+    height: 2rem;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -1207,14 +1230,20 @@ body  , .ChatChannel{
     display: flex;
   }
 
+  @media (min-width: 640px) {
+    .DeleteIndexImageBtn {
+      height: 2.5rem;
+    }
+  }
+
   .textSett {
     font-weight: 600 !important;
   }
 
   .IconHolder {
     display: flex;
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 2rem;
+    width: 2rem;
     align-items: center;
     justify-content: center;
     border-radius: 0.25rem;
@@ -1225,6 +1254,13 @@ body  , .ChatChannel{
   .IconHolder:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(60 57 63 / var(--tw-bg-opacity));
+  }
+
+  @media (min-width: 640px) {
+    .IconHolder {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
   }
 
   .NoNeed {
@@ -1266,12 +1302,8 @@ body  , .ChatChannel{
 
   @media (min-width: 768px) {
     .UploadedImage {
-      height: -webkit-fit-content !important;
-      height: -moz-fit-content !important;
-      height: fit-content !important;
-      width: -webkit-fit-content !important;
-      width: -moz-fit-content !important;
-      width: fit-content !important;
+      height: 85% !important;
+      width: 80% !important;
     }
   }
 
