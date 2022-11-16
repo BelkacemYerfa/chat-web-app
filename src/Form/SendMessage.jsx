@@ -130,10 +130,13 @@ const [ImageUploading , setImageUploading]= useState([]) ;
                   for(let i=0 ; i<ImageUploading.length ; i++){
                     if(ImageUploading[i]=== elem && i === 0){
                       setImageUploading(ImageUploading.slice(1 , ImageUploading.length))
-                      setFileSlider(false)
                     }
                     else if(ImageUploading[i] === elem){
                       setImageUploading(ImageUploading.splice(i , 1))
+                    }
+                    if(ImageUploading.length === 1){
+                      setImageUploading(ImageUploading.slice(1 , ImageUploading.length))
+                      setFileSlider(false)
                     }
                   }
                   console.log(ImageUploading)

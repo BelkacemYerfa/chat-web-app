@@ -559,6 +559,7 @@ body  , .ChatChannel{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar{
@@ -590,6 +591,125 @@ body  , .ChatChannel{
       display: flex;
     }
   }
+
+  /*SignIn Section*/
+
+  .SignContainer {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(60 64 76 / var(--tw-bg-opacity));
+  }
+
+  .FacebookContainer {
+    position: relative;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .UserInputHolder {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+
+  .icon {
+    position: absolute;
+    left: 0.5rem;
+  }
+
+  .InputChannelUpdated {
+    height: 40px !important;
+    width: 100% !important;
+    border-radius: 0.5rem !important;
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(60 57 63 / var(--tw-bg-opacity)) !important;
+    padding-left: 2.25rem !important;
+    padding-right: 2.25rem !important;
+    outline: 2px solid transparent !important;
+    outline-offset: 2px !important;
+  }
+
+  .InputChannelUpdated *::selection {
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(47 128 237 / var(--tw-bg-opacity)) !important;
+  }
+
+  .InputChannelUpdated::selection {
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(47 128 237 / var(--tw-bg-opacity)) !important;
+  }
+
+  .AccountSetting {
+    cursor: pointer;
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .AccountSetting:hover {
+    --tw-text-opacity: 1;
+    color: rgb(47 128 237 / var(--tw-text-opacity));
+    text-decoration-line: underline;
+  }
+
+  .error {
+    --tw-text-opacity: 1;
+    color: rgb(204 0 0 / var(--tw-text-opacity));
+  }
+
+  .BtnGHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .signInMethod {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+  }
+
+  .GoogleBtnHolder {
+    display: flex;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    padding: 10px;
+    font-weight: 600;
+    --tw-text-opacity: 1;
+    color: rgb(60 57 63 / var(--tw-text-opacity));
+  }
+
+  .GoogleIcon {
+    height: 1.75rem;
+    width: 1.75rem;
+  }
+
+  /*Home Section*/
 
   .SearchSection {
     position: relative;
@@ -807,6 +927,8 @@ body  , .ChatChannel{
   }
 
   .UserProfileImage {
+    height: 3rem;
+    width: 3rem;
     border-radius: 0.375rem;
   }
 
@@ -838,20 +960,117 @@ body  , .ChatChannel{
             transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
   }
 
+  .UserSettings {
+    position: absolute;
+    right: 11%;
+    bottom: 50%;
+    display: flex;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: 55%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    border-radius: 0.75rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(37 35 41 / var(--tw-bg-opacity));
+    padding: 0.75rem;
+    font-weight: 600;
+  }
+
+  .listChoice {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .LinkHolder {
+    display: flex;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    min-height: 40px;
+    width: 100%;
+    -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    border-radius: 0.5rem;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .LinkHolder:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(60 57 63 / var(--tw-bg-opacity));
+  }
+
+  .githubHolder {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  .LineSeparator {
+    height: 1px;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    --tw-border-opacity: 1;
+    border-color: rgb(60 57 63 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(60 57 63 / var(--tw-bg-opacity));
+  }
+
+  .LogOutMethod {
+    display: flex;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    min-height: 40px;
+    width: 100%;
+    -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+            transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    cursor: pointer;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    border-radius: 0.5rem;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    --tw-text-opacity: 1;
+    color: rgb(220 38 38 / var(--tw-text-opacity));
+  }
+
+  .LogOutMethod:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(242 242 242 / var(--tw-text-opacity));
+  }
+
   .ChatChannel {
-    position: absolute !important;
-    top: 0px !important;
-    left: -0% !important;
-    height: 100vh !important;
-    width: 100% !important;
-    --tw-bg-opacity: 1 !important;
-    background-color: rgb(37 35 41 / var(--tw-bg-opacity)) !important;
+    position: absolute;
+    top: 0px;
+    left: -0%;
+    height: 100vh;
+    width: 100%;
+    --tw-bg-opacity: 1;
+    background-color: rgb(37 35 41 / var(--tw-bg-opacity));
   }
 
   @media (min-width: 768px) {
     .ChatChannel {
-      position: relative !important;
-      width: 75% !important;
+      position: relative;
+      width: 75%;
     }
   }
 
@@ -931,9 +1150,9 @@ body  , .ChatChannel{
     padding: 0.5rem;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 550px) {
     .SendBtn {
-      left: -6.5%;
+      left: -8.5%;
     }
   }
 
@@ -962,9 +1181,9 @@ body  , .ChatChannel{
     padding: 0.5rem;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 550px) {
     .EmojiBtn {
-      left: 6.5%;
+      left: 8.5%;
     }
   }
 
@@ -1047,7 +1266,7 @@ body  , .ChatChannel{
     bottom: 13.5%;
     z-index: 20;
     display: flex;
-    height: 7vh;
+    height: 8vh;
     width: 46vw;
     flex-wrap: wrap;
     align-items: center;
@@ -1063,7 +1282,7 @@ body  , .ChatChannel{
 
   @media (min-width: 640px) {
     .DropUploading {
-      left: 7.35%;
+      left: 6.5%;
       height: 8vh;
       width: 30vw;
     }
@@ -1071,7 +1290,7 @@ body  , .ChatChannel{
 
   @media (min-width: 768px) {
     .DropUploading {
-      left: 28%;
+      left: 4.0%;
       bottom: 12.5%;
       width: 15vw;
     }
@@ -1318,5 +1537,145 @@ body  , .ChatChannel{
       position: absolute !important;
       top: 90% !important;
     }
+  }
+
+  .overlay {
+    position: absolute;
+    z-index: 50;
+    display: flex;
+    height: 100%;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: rgba(18, 15, 19, 0.5);
+  }
+
+  .ChannelContainer {
+    display: flex !important;
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+    width: 70% !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    border-radius: 0.75rem !important;
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important;
+    padding: 20px !important;
+    font-weight: 600 !important;
+    --tw-text-opacity: 1 !important;
+    color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+  }
+
+  @media (min-width: 550px) {
+    .ChannelContainer {
+      width: 30% !important;
+    }
+  }
+
+  .Format {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  .InputChannel {
+    height: 40px !important;
+    width: 100% !important;
+    border-radius: 0.5rem !important;
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(60 57 63 / var(--tw-bg-opacity)) !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    outline: 2px solid transparent !important;
+    outline-offset: 2px !important;
+  }
+
+  .InputChannel *::selection {
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(47 128 237 / var(--tw-bg-opacity)) !important;
+  }
+
+  .InputChannel::selection {
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(47 128 237 / var(--tw-bg-opacity)) !important;
+  }
+
+  .TextAreaChannel {
+    height: 5rem !important;
+    width: 100% !important;
+    border-radius: 0.5rem !important;
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(60 57 63 / var(--tw-bg-opacity)) !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    padding-left: 0.25rem !important;
+    padding-right: 0.25rem !important;
+    text-indent: 0.5rem !important;
+    outline: 2px solid transparent !important;
+    outline-offset: 2px !important;
+  }
+
+  .TextAreaChannel *::selection {
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(47 128 237 / var(--tw-bg-opacity)) !important;
+  }
+
+  .TextAreaChannel::selection {
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(47 128 237 / var(--tw-bg-opacity)) !important;
+  }
+
+  .BtnSHolder {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .CreateBtn {
+    position: relative !important;
+    left: 0px !important;
+    display: flex !important;
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+    width: -webkit-fit-content !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    cursor: pointer !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 0.5rem !important;
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(47 128 237 / var(--tw-bg-opacity)) !important;
+    padding: 0.5rem !important;
+  }
+
+  .CancelBtn {
+    position: relative !important;
+    left: 0px !important;
+    display: flex !important;
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+    width: -webkit-fit-content !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    cursor: pointer !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 0.375rem !important;
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(130 130 130 / var(--tw-bg-opacity)) !important;
+    padding: 0.5rem !important;
   }
 }

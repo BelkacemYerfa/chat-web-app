@@ -1,5 +1,6 @@
 import { SendMessage } from "../Form/SendMessage";
-import { useEffect , useState} from 'react'
+import { useEffect , useState} from 'react' ; 
+import { motion } from 'framer-motion' ; 
 export const Chat = ({childToParent})=>{
  const ChannelName = 'Welcome' ; 
  const [newToggle , setNewToggle] = useState(true) ; 
@@ -9,10 +10,13 @@ export const Chat = ({childToParent})=>{
  useEffect(() => {
    childToParent(newToggle)
  }, [newToggle])
- 
  return(
-  <div className="ChatChannel " style={{
-    zIndex : !newToggle ? '30' : '1'
+  <motion.div 
+   initial={{translateY : '10%' , opacity : 0}}
+   animate={{translateY : '0%' , opacity : 1}}
+   transition={{duration : .5 , delay : .45}}
+  className="ChatChannel " style={{
+    zIndex : !newToggle ? '30' : '1' , 
   }}>
    <div className="Nav-Section ChannelSection">
     <div className="toggle" onClick={HandleToggle} >
@@ -27,6 +31,6 @@ export const Chat = ({childToParent})=>{
    <div className="MainChatSection ">
      <SendMessage />
    </div>
-  </div>
+  </motion.div>
  );
 }

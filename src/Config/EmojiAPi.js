@@ -1,1 +1,1 @@
-export const APIKey = process.env.REACT_APP_WEATHER_API_KEY ; 
+export const APIKey = process.env.REACT_APP_EMOJI_API_KEY ; 

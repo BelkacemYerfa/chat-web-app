@@ -1,19 +1,20 @@
-import { Chat } from './Components/Chat';
-import { Search } from './Components/Search';
 import './input.css';
-import {useState} from 'react' ; 
-
+import {BrowserRouter as Router , Routes , Route} from 'react-router-dom' ; 
+import {BubblyContainer } from 'react-bubbly-transitions'
+import { Account } from './Pages/SignIn';
+import { Home } from './Pages/Home' ; 
+import { useState } from 'react';
 function App() {
-  const [data, setData] = useState(Boolean);
-  
-  const childToParent = (ToggleData) => {
-    setData(ToggleData);
-    console.log(ToggleData)
-  }
+  const [auth , setAuth] = useState({})
   return (
     <div className="App">
-        <Search toggle={data} childToParent={childToParent}  />
-        <Chat childToParent={childToParent} />   
+       <Router>
+        <BubblyContainer />
+        <Routes>
+          <Route path='/' element={<Account setAuth = {setAuth} />} ></Route>
+          <Route path='/Home' element={<Home auth={auth} />} ></Route>
+        </Routes>
+       </Router>
     </div>
   );
 }

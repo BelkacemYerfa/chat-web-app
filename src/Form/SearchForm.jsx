@@ -1,8 +1,9 @@
 import {useForm } from 'react-hook-form' ; 
 import * as yup from 'yup' ; 
 import {yupResolver} from '@hookform/resolvers/yup' ; 
+import { useEffect, useState } from 'react';
 
-export const SearchForm = ()=>{
+export const SearchForm = ({channelData})=>{
  const schema = yup.object().shape({
   Search : yup.string().required('') 
  })
@@ -12,10 +13,14 @@ export const SearchForm = ()=>{
  const onSearch = (data)=>{
   console.log(data)
  }
- const ChannelArray = [{
-   ChannelName : 'Welcome' , 
-   Logo : null , 
- }]
+ console.log(channelData)
+ const [ChannelArray , setChannelArray] = useState(['welcome'])
+  useEffect(()=>{
+   if(channelData !== '') {
+      ChannelArray.push(channelData); 
+      console.log(ChannelArray)
+   }
+  })
  return(
   <div className='MainSearch'>
    <form onSubmit={handleSubmit(onSearch)} className='SearchForm' >
@@ -30,15 +35,15 @@ export const SearchForm = ()=>{
          return(
             <div className='Channel' key={elem}>
              <div className='ShapeLogo'>
-              {elem.Logo !== null ? (<img src={elem.Logo} alt='ChL' />) : (<div className='Shape'>
+              <div className='Shape'>
                <h3 className='Name' >
-                {elem.ChannelName[0]}
+                {elem}
                </h3>
-              </div>) }
+              </div>
              </div>
              <div className='ChannelInfo'>
               <h3 className='ChannelName'>
-               {elem.ChannelName}
+               {elem}
               </h3>
              </div>
             </div>
